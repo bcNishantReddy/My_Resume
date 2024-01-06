@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+
+        .navbar {
+  background-color: rgba(245, 245, 220, 0);
+  text-align: center;
+  padding: 10px;
+}
+
+/* CSS for Navigation Links */
+.navbar a {
+  margin: 0 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .page video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .center-button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+
+        .grid-item {
+            background-color: rgba(245, 245, 220, 0);
+            color: beige;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            padding: 25px;
+        }
+        .grid-item1{
+            background-color: rgba(245, 245, 220, 0);
+            color: beige;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            padding: 25px;
+        }
+
+        #page2 .grid-item {
+            border-radius: 50%;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+        .grid-item1.grid-item1:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            text-align: center;
+            padding-top: 2;
+            font-size: small;
+        }
+
+        @media (max-width: 600px) {
+            .navbar-links {
+                flex-direction: column;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .center-button{
+             background-color: rgb(255, 255, 255);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+}
+.contact-form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #ffffff;
+
+}
+a {
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar-links">
+        <a href="#page1">Home</a>
+        <a href="#page2">Projects</a>
+        <a href="#page21">About</a>
+        <a href="#page3">Hobbies</a>
+        <a href="#page23">Socials</a>
+        <a href="#page31">Contact</a>
+        
+      </div>
+      
+    <section class="page" id="page1">
+        <video autoplay loop muted playsinline>
+            <source src="videos\page1.mp4" type="video/mp4">
+        </video>
+        <h1 class="center-text" style="font-size:80px;">Bommireddy C Nishant Reddy</h1>
+        <button style="border-radius: 6%; font-size: larger; " onclick="window.open('logos/Resume-Bommireddy-C-Nishant-Reddy (1).pdf')"class="center-button">My Resume</button>
+    </section>
+
+
+    <section class="page" id="page21">
+        <video autoplay loop muted playsinline>
+            <source src="vid.mov" type="video/mp4">
+        </video>
+        <h1 style="centre-text; font-size:80px;">About Me</h1>
+        <center>
+        <p style="font-size: 35px;">Tech enthusiast and Python coder with a passion for AI.<br> Successfully started and scaled a college threads business.<br>Skilled in front-end development and SQL database connections.</p>
+    </center>
+    </section>
+
+
+    <section class="page" id="page2">
+        <video autoplay loop muted playsinline>
+            <source src="videos\page2.mp4" type="video/mp4">
+        </video>
+        <h1 style="centre-text; font-size:80px;">Projects</h1>
+        <div class="grid-container">
+            <div class="grid-item1"><img src="logos\css logo.png" width="200px" height="200px" alt="Logo 1"></div>
+            <div class="grid-item1"><img src="logos\c lang.png" width="200px" height="200px" alt="Logo 2"></div>
+            <div class="grid-item1"><img src="logos\html.png" width="200px" height="200px"alt="Logo 3"></div>
+            <div class="grid-item1"><img src="logos\sql.png" width="200px" height="200px"alt="Logo 4"></div>
+            <div class="grid-item1"><img src="logos\js.png" width="200px" height="200px"alt="Logo 5"></div>
+            <div class="grid-item1"><img src="logos\python-logo-clojure-javascript-9-af1dd70ea3def5fb0824ee7e80b5c558 (1).png" width="200px" height="200px"alt="Logo 6"></div>
+        </div>
+    </section>
+
+
+
+
+    
+    <section class="page" id="page3">
+        <video autoplay loop muted playsinline>
+            <source src="videos/3.mp4" type="video/mp4">
+        </video>
+        <h1 style="centre-text; font-size:80px;">Hobbies</h1>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="logos\saif71-com-n3HjfZPuT5w-unsplash.jpg" alt="Image 1" height="500px" width="500px">
+                <p style="font-size: 40px;">Badminton</p>
+            </div>
+            <div class="grid-item">
+                <img src="logos\carl-raw-m3hn2Kn5Bns-unsplash.jpg" alt="Image 2" height="500px" width="500px">
+                <p style="font-size: 40px;">Gaming</p>
+            </div>
+            <div class="grid-item">
+                <img  src="logos\tj-dragotta-Gl0jBJJTDWs-unsplash.jpg" alt="Image 3" height="500px" width="500px">
+                <p style="font-size: 40px;">Basketball</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="page" id="page23">
+        <video autoplay loop muted playsinline>
+            <source src="videos\Untitled video - Made with Clipchamp (1).mp4" type="video/mp4">
+        </video>
+        
+       
+        <h1 style="centre-text; font-size:80px;">My Socials</h1>
+        <center>
+        <p style="font-size: 50px;">Instagram: <a href="https://www.instagram.com/bcnishantreddy/">bcnishantreddy</a><br> Linkedin: <a href="https://www.linkedin.com/in/bommireddy-c-nishant-reddy-b28a25283/">Bommireddy C Nishant Reddy</a>
+    </center>
+    <br><br><br><br><br>
+    </section>
+
+
+
+    <section class="page" id="page31">
+    <div class="page">
+        <h1 style="text-align: center; font-size:80px;">Contact</h1>
+        <form id="myForm">
+            <label for="name">Name:</label><br>
+            <input style="width:100%;" type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input style="width:100%;" type="email" id="email" name="email" required><br><br>
+            <div style="text-align: center;">
+                <input type="submit" value="Submit">
+                <br><br><br>
+                
+            </div>
+            <br><br><br><br>
+        </form>  
+    </div>
+    </section>
+    
+    <footer>
+        <p>©2024 Bommireddy C Nishant Reddy</p>
+    </footer>
+    
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            alert("Form Submitted Successfully!");
+        });
+    
+    
+
+        function showAlert(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+                alert("Form submitted successfully!");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("navbar").style.height = "80px";
+            } else {
+                document.getElementById("navbar").style.height = "100px";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.addEventListener('canplay', function() {
+                    this.parentNode.style.backgroundImage = 'logos/social media.jpg';
+                });
+                video.play();
+            });
+        });
+    </script>
+</body>
+</html>
