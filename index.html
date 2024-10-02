@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Nishant Reddy's Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <style>
         body {
             background-color: black;
@@ -12,36 +13,30 @@
             font-family: 'Poppins', sans-serif;
             font-size: 1em;
         }
-
         .navbar {
-            background-color: rgba(245, 245, 220, 0);
+            background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
             padding: 1em;
         }
-
         .navbar a {
             margin: 0 1em;
-            color: rgb(255, 255, 255);
+            color: white;
             text-decoration: none;
             display: inline-block;
             padding: 1em;
         }
-
         .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #555;
+            color: white;
         }
-
         .page {
             height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2em;
             position: relative;
         }
-
         .page video {
             position: absolute;
             top: 0;
@@ -52,269 +47,175 @@
             z-index: -1;
             opacity: 0.7;
         }
-
-        .center-text {
-            text-align: center;
-        }
-
-        .center-button {
-            display: block;
-            margin: 0 auto;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
-            width: 100%;
-        }
-
-        .grid-item, .grid-item1 {
-            background-color: rgba(245, 245, 220, 0);
-            color: beige;
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            padding: 2em;
-        }
-
-        #page2 .grid-item {
-            border-radius: 50%;
-        }
-
-        .grid-item:hover, .grid-item1:hover {
-            transform: scale(1.05);
-        }
-
-        footer {
-            bottom: 0;
-            width: 100%;
-            background-color: rgb(255, 255, 255);
+        button {
+            background-color: white;
             color: black;
-            text-align: center;
-            padding-top: 2em;
-            font-size: small;
-        }
-
-        .center-button{
-             background-color: rgb(255, 255, 255);
             border: none;
-            color: black;
             padding: 1em 2em;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1em;
-            margin: 0.5em 0.5em;
             cursor: pointer;
+            border-radius: 5px;
         }
-
-        .contact-form {
+        .carousel-container {
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        .contact-form input[type="text"],
-        .contact-form input[type="email"] {
-            width: 100%;
-            padding: 2em;
-            margin: 0.5em 0;
-            box-sizing: border-box;
-            font-size: 1.2em;
-        }
-
-        .contact-form input[type="submit"] {
-            padding: 2em 4em;
-            font-size: 1.2em;
-        }
-
-        /* Add a new class for social links */
-        .social-link {
+        .carousel {
+            width: 200%;
+            height: 100%;
+            position: absolute;
             display: flex;
             align-items: center;
-            font-size: 1.5em;
-            margin-bottom: 1em;
+            animation: rotate 10s linear infinite;
         }
-
-        /* Add a new class for social icons */
-        .social-icon {
-            height: 24px;
-            margin-right: 1em;
+        .carousel-item {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            color: black;
+            margin: 0 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transform-origin: 100% 50%;
         }
-
-        a {
-            text-decoration: none;
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
-        /* .hobbies-container {
-        display: flex;
-        overflow-x: auto;
-        gap: 2em;
-        padding: 1em;
-    } */
-/* 
-    /* Add a new class for the hobby item */
-    .hobby-item {
-        flex: 0 0 auto;
-        width: 400px;
-        height: 400px;
-        background-color: rgba(245, 245, 220, 0);
-        color: beige;
-        text-align: center;
-        padding: 2em;
-        transition: transform 0.3s ease;
-    }
-
-    .hobby-item:hover {
-        transform: scale(1.05);
-    }
-    Add a new class for the hobbies container
-    .hobbies-container {
-        display: flex;
-        overflow-x: auto;
-        gap: 2em;
-        padding: 1em;
-    } */ */
-
-     Add a new class for the hobby item
-    .hobby-item {
-        flex: 0 0 auto;
-        width: 50vw;
-        height: 50vw;
-        max-width: 400px;
-        max-height: 400px;
-        background-color: rgba(245, 245, 220, 0);
-        color: beige;
-        text-align: center;
-        padding: 2em;
-        transition: transform 0.3s ease;
-    }
-
-    .hobby-item:hover {
-        transform: scale(1.05);
-    }
-
-    .hobby-item img {
-        max-width: 100%;
-        max-height: 100%;
-    }
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: 100%;
+            padding: 1em;
+            margin-top: 0.5em;
+            border: none;
+            background-color: #333;
+            color: white;
+        }
+        input[type="submit"] {
+            background-color: #555;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .navbar a {
+                padding: 0.5em;
+            }
+            .page {
+                padding: 1em;
+            }
+            .carousel-container {
+                height: 200px;
+            }
+            .carousel-item {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        @media (max-width: 480px) {
+            .carousel-container {
+                display: none; /* Hide carousel on very small screens */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="navbar" id="navbar-links">
-        <a href="#page1">Home</a>
-        <a href="#page2">Projects</a>
-        <a href="#page21">About</a>
-        <!-- <a href="#page3">Hobbies</a> -->
-        <a href="#page23">Socials</a>
-        <a href="#page31">Contact</a>
+        <a href="#page1" data-cursor-text="Home">Home</a>
+        <a href="#page2" data-cursor-text="See Projects">Projects</a>
+        <a href="#page21" data-cursor-text="About Me">About</a>
+        <a href="#page23" data-cursor-text="View Socials">Socials</a>
+        <a href="#page31" data-cursor-text="Contact Me">Contact</a>
     </div>
-    <section class="page" id="page1">
-        <video autoplay loop muted playsinline>
-            <source src="videos\page1.mp4" type="video/mp4">
-        </video>
-        <h1 class="center-text" style="font-size:4em;">Bommireddy C Nishant Reddy</h1>
-        <button style="border-radius: 6%; font-size: larger; " onclick="window.open('logos/Resume-Bommireddy-C-Nishant-Reddy (1).pdf')"class="center-button">My Resume</button>
-    </section>
-    <section class="page" id="page21">
-        <video autoplay loop muted playsinline>
-            <source src="vid.mov" type="video/mp4">
-        </video>
-        <h1 style="centre-text; font-size:4em;">About Me</h1>
-        <center>
-        <p style="font-size: 1.75em;">Tech enthusiast and Python coder with a passion for AI.<br> Successfully started and scaled a college threads business.<br>Skilled in front-end development and SQL database connections.</p>
-    </center>
-    </section>
-    <section class="page" id="page2">
-        <video autoplay loop muted playsinline>
-            <source src="videos\page2.mp4" type="video/mp4">
-        </video>
-        <br>
-        <h1 style="centre-text; font-size:4em;">Projects</h1>
-        <div class="grid-container">
-            <div class="grid-item1"><img src="logos\css logo.png" width="200px" height="200px" alt="Logo 1"></div>
-            <div class="grid-item1"><img src="logos\c lang.png" width="200px" height="200px" alt="Logo 2"></div>
-            <div class="grid-item1"><img src="logos\html.png" width="200px" height="200px"alt="Logo 3"></div>
-            <div class="grid-item1"><img src="logos\sql.png" width="200px" height="200px"alt="Logo 4"></div>
-            <div class="grid-item1"><img src="logos\js.png" width="200px" height="200px"alt="Logo 5"></div>
-            <div class="grid-item1"><img src="logos\python-logo-clojure-javascript-9-af1dd70ea3def5fb0824ee7e80b5c558 (1).png" width="200px" height="200px"alt="Logo 6"></div>
+    <div id="fullpage">
+        <div class="section" id="page1">
+            <video autoplay loop muted playsinline>
+                <source src="videos/page1.mp4" type="video/mp4">
+            </video>
+            <h1>Bommireddy C Nishant Reddy</h1>
+            <button onclick="window.location.href='logos/Resume-Bommireddy-C-Nishant-Reddy.pdf'">My Resume</button>
         </div>
-    </section>
-    <!-- <section class="page" id="page3">
-        <video autoplay loop muted playsinline>
-            <source src="videos/3.mp4" type="video/mp4">
-        </video>
-        <h1 style="centre-text; font-size:4em;">Hobbies</h1>
-        <div style="display: grid ;"  class="hobbies-container">
-            <div class="hobby-item">
-                <img src="logos\saif71-com-n3HjfZPuT5w-unsplash.jpg" alt="Image 1" height="300px" width="300px">
-                <p style="font-size: 1.5em;">Badminton</p>
-            </div>
-            <div class="hobby-item">
-                <img src="logos\carl-raw-m3hn2Kn5Bns-unsplash.jpg" alt="Image 2" height="300px" width="300px">
-                <p style="font-size: 1.5em;">Gaming</p>
+        <div class="section" id="page21">
+            <video autoplay loop muted playsinline>
+                <source src="vid.mov" type="video/mp4">
+            </video>
+            <div class="content-box">
+                <h1>About Me</h1>
+                <p>Tech enthusiast and Python coder with a passion for AI. Successfully started and scaled a college threads business. Skilled in front-end development and SQL database connections.</p>
             </div>
         </div>
-    </section> -->
-    <section class="page" id="page23">
-        <video autoplay loop muted playsinline>
-            <source src="videos\Untitled video - Made with Clipchamp (1).mp4" type="video/mp4">
-        </video>
-        <br>
-        <h1 style="centre-text; font-size:4em;">Socials</h1>
-        <div class="grid-container">
-            <div class="grid-item1"><img src="logos\insta.png" width="250px" height="200px" alt="Logo 1"></div>
-            <div class="grid-item1"><img src="logos\linkedin.png" width="200px" height="200px" alt="Logo 2"></div>
-            <div class="grid-item1"><img src="logos\github.png" width="200px" height="200px"alt="Logo 3"></div>
-        </div>
-    </section>
-    <br><br><br><br><br>
-    </section>
-    <section class="page" id="page31">
-        <div class="page">
-            <h1 style="text-align: center; font-size:80px;">Contact</h1>
-            <form id="myForm" style="width: 80%; margin: auto;">
-                <label for="name">Name:</label><br>
-                <input style="width:100%; height: 50px;" type="text" id="name" name="name" required><br>
-                <label for="email">Email:</label><br>
-                <input style="width:100%; height: 50px;" type="email" id="email" name="email" required><br><br>
-                <div style="text-align: center;">
-                    <input type="submit" value="Submit">
-                    <br><br><br>
+        <div class="section" id="page2">
+            <video autoplay loop muted playsinline>
+                <source src="videos/page2.mp4" type="video/mp4">
+            </video>
+            <h1>Projects</h1>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">Project 1</div>
+                    <div class="carousel-item">Project 2</div>
+                    <div class="carousel-item">Project 3</div>
                 </div>
-                <br><br><br><br>
-            </form>  
+            </div>
         </div>
-    </section>
-    
+        <div class="section" id="page23">
+            <video autoplay loop muted playsinline>
+                <source src="videos/socials.mp4" type="video/mp4">
+            </video>
+            <h1>Socials</h1>
+        </div>
+        <div class="section" id="page31">
+            <h1>Contact</h1>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
     <footer>
-        <p>©2024 Bommireddy C Nishant Reddy</p>
+        <p>© 2024 Bommireddy C Nishant Reddy</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
     <script>
-        document.getElementById("myForm").addEventListener("submit", function(event){
-            event.preventDefault();
-            alert("Form Submitted Successfully!");
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            scrollHorizontally: true
         });
-        function showAlert(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-            alert("Form submitted successfully!");
-        }
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                document.getElementById("navbar").style.height = "80px";
-            } else {
-                document.getElementById("navbar").style.height = "100px";
+        document.querySelector('#contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form Submitted Successfully!');
+        });
+        let carousel = document.querySelector('.carousel');
+        let isDragging = false;
+        let startAngle = 0;
+        carousel.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startAngle = e.pageX;
+        });
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        carousel.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                let currentAngle = startAngle - e.pageX;
+                carousel.style.transform = `rotate(${currentAngle / 5}deg)`;
             }
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            var videos = document.querySelectorAll('video');
-            videos.forEach(function(video) {
-                video.addEventListener('canplay', function() {
-                    this.parentNode.style.backgroundImage = 'logos/social media.jpg';
-                });
-                video.play();
-            });
         });
     </script>
 </body>
